@@ -70,6 +70,7 @@
                     <layers>
                         <layer>core-server</layer>
                         <layer>embedded-activemq</layer>
+                        <layer>jms-activemq</layer>
                     </layers>
                     <packaging-scripts>
                         <cli-session>
