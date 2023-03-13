@@ -9,6 +9,10 @@ spec:
       labels:
         app.kubernetes.io/name: jms-broker-wildfly
     spec:
+      volumes:
+        - name: jms-journal
+          persistentVolumeClaim:
+            claimName: jms-journal
       containers:
         - name: jms-broker
           image: java-useless-image:latest
@@ -55,10 +59,6 @@ spec:
               value: jms-broker-ping
             - name: ENV_FILES
               value: /etc/extensions/*
-          volumes:
-            - name: jms-journal
-              persistentVolumeClaim:
-                claimName: jms-journal
           volumeMounts:
             - mountPath: "/tmp/jms-journal"
               name: jms-journal
