@@ -55,6 +55,8 @@ spec:
               value: jms-producer-ping
             - name: ENV_FILES
               value: /etc/extensions/*
+            - name: BROKER_HOST
+              value: "jms-broker"
 ---
 kind: Service
 apiVersion: v1
